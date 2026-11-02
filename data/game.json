@@ -1,0 +1,81 @@
+{
+  "window": {"width": 390, "height": 700},
+  "goal": {"time": 120},
+  "hero": {
+    "speed": 120,
+    "max_hp": 100,
+    "radius": 12,
+    "mouse_dead_zone": 12,
+    "magnet_radius": 60
+  },
+  "spark_wand": {
+    "damage": 10,
+    "interval": 0.8,
+    "speed": 400,
+    "radius": 4,
+    "life": 1.0,
+    "damage_plus_per_level": 3,
+    "interval_minus_per_level": 0.08,
+    "sparks_by_level": [1, 1, 2, 2, 3]
+  },
+  "spin_blades": {
+    "radius": 60,
+    "turn_period": 1.5,
+    "hit_interval": 0.5,
+    "damage": 8,
+    "damage_plus_per_level": 3,
+    "blades_by_level": [2, 3, 3, 4, 4],
+    "blade_hit_radius": 10
+  },
+  "holy_ring": {
+    "interval": 0.5,
+    "damage": 5,
+    "radius": 50,
+    "damage_plus_per_level": 2,
+    "radius_plus_per_level": 10
+  },
+  "passives": {
+    "swift_boots": {"speed_bonus_per_level": 0.1},
+    "big_heart": {"max_hp_plus_per_level": 20, "heal_per_level": 20},
+    "magnet": {"magnet_radius_plus_per_level": 30}
+  },
+  "enemies": {
+    "bat":   {"hp": 8,   "speed": 100, "damage": 5,  "xp": 1, "radius": 10},
+    "slime": {"hp": 30,  "speed": 55,  "damage": 8,  "xp": 2, "radius": 14},
+    "ghost": {"hp": 15,  "speed": 135, "damage": 6,  "xp": 2, "radius": 11},
+    "demon": {"hp": 800, "speed": 85,  "damage": 20, "xp": 0, "radius": 24,
+              "boss": true, "draw_scale": 2}
+  },
+  "gem": {"speed": 300, "min_xp_for_pink": 2},
+  "contact": {"rehit_interval": 0.5},
+  "xp": {"first_level_need": 5, "level_need_increment": 3},
+  "levelup": {"cards_shown": 3, "heal_fallback": 30},
+  "cards": {
+    "spark_wand": {"short": "Spark", "name": "Spark Wand", "text": "Shoots sparks at the nearest enemy"},
+    "spin_blades": {"short": "Blades", "name": "Spin Blades", "text": "Blades circle around you"},
+    "holy_ring": {"short": "Ring", "name": "Holy Ring", "text": "Hurts every enemy close to you"},
+    "swift_boots": {"short": "Boots", "name": "Swift Boots", "text": "+10% walking speed"},
+    "big_heart": {"short": "Heart", "name": "Big Heart", "text": "+20 max HP and heal 20"},
+    "magnet": {"short": "Magnet", "name": "Magnet", "text": "+30 px gem pickup range"},
+    "heal": {"short": "Heal", "name": "Heal", "text": "Heal 30 HP"}
+  },
+  "spawning": {
+    "interval": 1.0,
+    "max_per_interval": 8,
+    "spawn_radius": 380,
+    "despawn_radius": 700,
+    "boss_return_radius": 600,
+    "max_alive": 120,
+    "boss": {"from": 90, "type": "demon"},
+    "waves": [
+      {"from": 0,   "types": ["bat"],                "min_alive": 12},
+      {"from": 15,  "types": ["bat"],                "min_alive": 20},
+      {"from": 30,  "types": ["bat", "slime"],       "min_alive": 28},
+      {"from": 45,  "types": ["slime", "ghost"],     "min_alive": 36},
+      {"from": 60,  "types": ["bat", "ghost"],       "min_alive": 45},
+      {"from": 75,  "types": ["bat", "slime", "ghost"], "min_alive": 55},
+      {"from": 90,  "types": ["bat", "slime"],       "min_alive": 55},
+      {"from": 105, "types": ["bat"],                "min_alive": 75}
+    ]
+  }
+}
